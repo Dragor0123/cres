@@ -29,12 +29,27 @@ def build_pseudo(args, trainer):
     """pseudo-episode 생성기. 반환: 인자 없는 callable → (support ids, query ids, 지역 레이블 tensor) 또는 None."""
     if args.pseudo == "none":
         return None
+    if args.pseudo == "sup2":
+        # 012: 두 번째 지도 에피소드. 첫 번째와 같은 방식(전역 random, base 클래스 풀, base 레이블만).
+        from cres.teg.trainer import task_generator_in_class
+        import random
+
+        def fn2():
+            cs = random.sample(trainer.class_list_train, trainer.n_way)
+            s_, q_, cs = task_generator_in_class(trainer.id_by_class, cs, trainer.n_way, trainer.k_shot, trainer.n_query)
+            return s_, q_, trainer.label_list_of(cs, q_)
+
+        fn2.gen = None
+        return fn2
     if args.pseudo in ("naq_feat", "naq_diff"):
         from baselines.naq.generator import NaQGenerator
         import numpy as np
         # 풀 U = base가 아닌 노드(분할 파일의 base 클래스로 제외). 생성기는 레이블을 받지 않는다.
-        U = np.where(~np.isin(trainer.labels_np, trainer.class_list_train))[0]
-        g = NaQGenerator(args.dataset, args.seed, args.shot, args.qry, kind=args.pseudo.split("_")[1], U=U)
+        if args.pool == "all":  # 011 참고 arm naqfeat_allpool: 전체 노드(원 NaQ 풀)
+            U = np.arange(trainer.num_nodes)
+        else:
+            U = np.where(~np.isin(trainer.labels_np, trainer.class_list_train))[0]
+        g = NaQGenerator(args.dataset, args.seed, args.shot, args.qry, kind=args.pseudo.split("_")[1], U=U, pool=args.pool)
     elif args.pseudo == "cres":
         from cres.episodes import CRESGenerator
         g = CRESGenerator(args.dataset, args.seed, args.shot, args.qry)
@@ -63,7 +78,8 @@ def main():
     ap.add_argument("--epochs", type=int, default=10)
     ap.add_argument("--episodes", type=int, default=50)
     ap.add_argument("--lam", type=float, default=0.0)
-    ap.add_argument("--pseudo", default="none", choices=["none", "naq_feat", "naq_diff", "cres"])
+    ap.add_argument("--pseudo", default="none", choices=["none", "naq_feat", "naq_diff", "cres", "sup2"])
+    ap.add_argument("--pool", default="U", choices=["U", "all"])
     ap.add_argument("--arm", default="sup")
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--records_dir", default=None)
@@ -75,6 +91,11 @@ def main():
     t_init = time.time() - t0
     pseudo_fn = build_pseudo(a, tr)
     res = tr.train(pseudo_fn, a.lam)
+    finish(a, tr, res, t0, t_init, pseudo_fn)
+
+
+def finish(a, tr, res, t0, t_init, pseudo_fn, extra_meta=None):
+    """고정 test·valid 평가와 기록(run.json, ep_acc.csv, records). 013 진단 실행도 이 함수를 쓴다."""
     eps = json.load(open(os.path.join(ROOT, "splits", "episodes", f"{a.dataset}_seed{a.seed}_K{a.shot}.json")))
     assert eps["Q"] == a.qry and eps["K"] == a.shot
     acc_test = tr.eval_fixed(eps["test"]["episodes"])
@@ -83,7 +104,7 @@ def main():
     csv = "mode,ep_idx,acc\n" + "".join(f"{m},{i},{x:.6f}\n" for m, i, x in rows)
     open(os.path.join(a.out_dir, "ep_acc.csv"), "w").write(csv)
     meta = {
-        "dataset": a.dataset, "K": a.shot, "seed": a.seed, "arm": a.arm, "pseudo": a.pseudo, "lam": a.lam, "Q": a.qry,
+        "dataset": a.dataset, "K": a.shot, "seed": a.seed, "arm": a.arm, "pseudo": getattr(a, "pseudo", None), "lam": a.lam, "Q": a.qry, "pool": getattr(a, "pool", None),
         "epochs": a.epochs, "episodes": a.episodes, "git": git_head(),
         "gpu": os.environ.get("CUDA_VISIBLE_DEVICES"), "gpu_name": torch.cuda.get_device_name(0), "host": socket.gethostname(),
         "sec_total": time.time() - t0, "sec_init": t_init, "max_mem_alloc_MB": torch.cuda.max_memory_allocated() / 2**20,
@@ -92,7 +113,9 @@ def main():
         "fixed_test_acc": sum(acc_test) / len(acc_test), "fixed_valid_acc": sum(acc_valid) / len(acc_valid),
         "episodes_sha1": {"test": eps["test"]["sha1"], "valid": eps["valid"]["sha1"]},
     }
-    if pseudo_fn is not None and hasattr(pseudo_fn.gen, "stats"):
+    if extra_meta:
+        meta.update(extra_meta)
+    if pseudo_fn is not None and pseudo_fn.gen is not None and hasattr(pseudo_fn.gen, "stats"):
         meta["pseudo_stats"] = pseudo_fn.gen.stats()
     json.dump({**meta, "history": res["history"]}, open(os.path.join(a.out_dir, "run.json"), "w"), indent=1)
     if a.records_dir:
