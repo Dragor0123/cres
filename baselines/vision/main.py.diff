@@ -1,0 +1,117 @@
+diff --git a/main.py b/main.py
+index 9494152..7c386fa 100644
+--- a/main.py
++++ b/main.py
+@@ -9,6 +9,8 @@ import time
+ from utils import *
+ from models import *
+ import os
++import json  # CRES adapter
++import cres_adapter  # CRES adapter
+ 
+ def get_parser():
+     parser = argparse.ArgumentParser(description='LIGT v5')
+@@ -32,6 +34,8 @@ def get_parser():
+     parser.add_argument('--drop_edge', type=float, default=0.2)
+     parser.add_argument('--con_weight', type=float, default=0.5)
+     parser.add_argument('--pool_size', type=int, default=4096)
++    parser.add_argument('--cres_seed', type=int, default=0)  # CRES adapter: split/episode seed
++    parser.add_argument('--out_dir', type=str, default='.')  # CRES adapter
+     return parser
+ 
+ def fast_create_sampled_padded_adj_optimized(full_adj_tensor, neighbor_counts, max_neighbors, device):
+@@ -120,14 +124,14 @@ if __name__ == '__main__':
+     if torch.cuda.is_available():
+         torch.cuda.manual_seed_all(args.seed)
+ 
+-    data, train_idx, id_by_class, train_class, dev_class, test_class, full_adj_tensor, neighbor_counts = split(
+-        args.dataset)
++    data, train_idx, id_by_class, train_class, dev_class, test_class, full_adj_tensor, neighbor_counts = cres_adapter.split_from_files(
++        args.dataset, args.cres_seed)  # CRES adapter
+     all_nodes_idx = np.arange(data.num_nodes)
+ 
+     adaptive_features, _, _ = precompute_adaptive_task_features(data, return_components=True)
+     task_features = adaptive_features.to(device)
+ 
+-    if args.dataset == 'dblp':
++    if args.dataset in ('dblp', 'Amazon_clothing', 'Amazon_electronics'):  # CRES adapter: same object type as dblp
+         data.edge_index = data.edge_index.to(device)
+         data.y = data.y.to(device)
+         data.x = data.x.to(device)
+@@ -138,10 +142,8 @@ if __name__ == '__main__':
+         model.eval()
+         test_acc_all = []
+         with torch.no_grad():
+-            for i in range(args.test_episodes):
+-                support_np, query_np, _ = test_task_generator(
+-                    id_by_class, eval_class, args.n_way, args.k_shot, args.m_qry
+-                )
++            eps, q_eval, _ = cres_adapter.fixed_episodes(args.dataset, args.cres_seed, args.k_shot, eval_class)  # CRES adapter
++            for support_np, query_np, _ in eps:  # CRES adapter
+ 
+                 sub_x, sub_adj, sub_support, sub_query = get_subgraph_batch(
+                     data.x, global_padded_adj, support_np, query_np, device
+@@ -152,13 +154,14 @@ if __name__ == '__main__':
+                 logits, _ = model(sub_x, sub_adj, sub_support, sub_query,
+                                   drop_label_prob=0.0, input_noise_std=0.0)
+ 
+-                labels = torch.arange(args.n_way, device=device).repeat_interleave(args.m_qry)
++                labels = torch.arange(args.n_way, device=device).repeat_interleave(q_eval)  # CRES adapter
+                 acc_test = accuracy(logits, labels)
+                 test_acc_all.append(acc_test.item())
+ 
+         m, s = np.mean(test_acc_all), np.std(test_acc_all)
+         interval = 1.96 * (s / np.sqrt(len(test_acc_all)))
+         print(f'Test Results: Acc_mean = {m:.4f}, Acc_std = {s:.4f}, 95% interval = {interval:.4f}')
++        test.last_accs = test_acc_all  # CRES adapter
+         return m, s, interval
+ 
+     def train_eval(task_features_for_gen):
+@@ -232,12 +235,12 @@ if __name__ == '__main__':
+                 print(f'\nEpoch = {epoch:4d}, Loss = {loss_val:.4f}, Train_Acc = {acc_train:.4f}')
+ 
+             if epoch > 0 and epoch % 20 == 0:
+-                dev_acc, _, _ = test(model, dev_class, global_padded_adj)
++                dev_acc, _, _ = test(model, 'valid', global_padded_adj)  # CRES adapter
+                 if dev_acc > best_dev_acc:
+                     best_dev_acc = dev_acc
+                     best_epoch = epoch
+                     stop_cnt = 0
+-                    torch.save(model.state_dict(), 'best_model_ligt_v5.pth')
++                    torch.save(model.state_dict(), os.path.join(args.out_dir, 'best_model_ligt_v5.pth'))  # CRES adapter
+                 else:
+                     stop_cnt += 1
+                 if stop_cnt > args.patience:
+@@ -246,14 +249,15 @@ if __name__ == '__main__':
+ 
+         print("=" * 40)
+         print("Loading best model from epoch", best_epoch)
+-        model.load_state_dict(torch.load('best_model_ligt_v5.pth'))
++        model.load_state_dict(torch.load(os.path.join(args.out_dir, 'best_model_ligt_v5.pth')))  # CRES adapter
+ 
+-        acc, std, interval = test(model, test_class, global_padded_adj)
++        acc, std, interval = test(model, 'test', global_padded_adj)  # CRES adapter
++        train_eval.result = {'best_epoch': best_epoch, 'best_dev_acc': best_dev_acc, 'test_accs': list(test.last_accs), 'sec': time.time() - time_begin}  # CRES adapter
+         print("=" * 40)
+         return acc, std, interval
+ 
+     acc_mean, acc_std, acc_interval = [], [], []
+-    for run in range(5):
++    for run in range(1):  # CRES adapter: one run per (dataset, K, seed) process
+         print(f"\n\nStarting Run {run + 1}")
+         m, s, interval = train_eval(task_features)
+         acc_mean.append(m)
+@@ -264,4 +268,10 @@ if __name__ == '__main__':
+     print(f"Final results:")
+     print(f"Final Acc: {np.mean(acc_mean):.4f}")
+     print(f"Final Acc Std Dev: {np.std(acc_mean):.4f}")
+-    print(f"Final 95% Interval: {np.mean(acc_interval):.4f}")
+\ No newline at end of file
++    print(f"Final 95% Interval: {np.mean(acc_interval):.4f}")
++    # CRES adapter: per-episode test accuracy
++    os.makedirs(args.out_dir, exist_ok=True)
++    with open(os.path.join(args.out_dir, 'ep_acc.csv'), 'w') as f:
++        f.write('mode,ep_idx,acc\n' + ''.join(f'test,{i},{a:.6f}\n' for i, a in enumerate(train_eval.result['test_accs'])))
++    json.dump({**vars(args), **{k: v for k, v in train_eval.result.items() if k != 'test_accs'}, 'fixed_test_acc': float(np.mean(train_eval.result['test_accs']))},
++              open(os.path.join(args.out_dir, 'run.json'), 'w'), indent=1)
+\ No newline at end of file
