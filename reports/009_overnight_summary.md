@@ -1,6 +1,6 @@
 # 009 야간 요약 (2026-10-13 ~)
 
-작성 2026-10-13 16:2x UTC · T0 = 15:08:55Z · 모든 실행 항목 종료 시점 T0+1h10(16:16)에 작성(000 §5 "모든 작업 종료 또는 T0+8h30 중 먼저").
+작성 2026-10-13 16:25 UTC · T0 = 15:08:55Z · 모든 실행 항목 종료 시점 T0+1h10(16:16)에 작성(000 §5 "모든 작업 종료 또는 T0+8h30 중 먼저").
 집계: `tools/aggregate_overnight.py` → `records/009_summary/aggregate.json`, `tables.md` (records/만 읽음).
 
 ## 1. 큐 결과
@@ -193,4 +193,4 @@ arm 이름: `sup` = 지도 단독(003 이식본), `naqfeat_l<λ>`/`naqdiff_l<λ>
 | NaQ | `cfe5373` | 0 |
 | VISION | `0524eae` | 0 |
 
-<!-- PUSH -->
+push: `ef30047`까지 origin/main에 push 성공(`c2a72c8..ef30047  main -> main`). 이 줄을 더한 마지막 커밋의 push 결과는 채팅 보고에 적는다.

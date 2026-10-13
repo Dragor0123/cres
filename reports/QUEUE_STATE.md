@@ -17,14 +17,17 @@ T0: 2026-10-13T15:08:55Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 | 008 | skipped | — | — | G1 불통과 | cd8cf6a | 000 §6 |
 | 009 | done | 16:17 | 16:25 | — | (009 report) | |
 
-결정 필요:
-1. (003) G3를 1차 불충족 → 이식 버그 수정 → 2차 충족으로 처리. 재실행 통과가 등록 취지에 맞는지 확인 필요.
-2. (004) G1 불통과 → 008 skip. 다음 설계 방향은 사용자 판단.
-3. (005) Electronics G2 통과는 B1(s_H)이 약한 데서 오는 차이가 대부분(core − B2 +0.1~1.0%p, core − B3 ≈ 0). 비교 기준 검토 필요.
-4. (005) r 방향(ψ(u,v)의 u 우선) 구현 세부 검토.
-5. (007) TEG-orig 공식 실행 skip: conda 실행 파일이 없어 python 3.8 환경을 만들 수 없고, torch 1.10.1은 python 3.10 wheel이 없음. 환경 구성 방법 결정 필요.
-7. (006) NaQ 재구현의 K=5 support 구성(anchor + 상위 이웃)과 풀 U(base 제외) 검토. Electronics NaQ-Diff는 pseudo-episode의 52–68%에 중복 노드.
-6. (007) VISION 환경은 conda clone 대신 /venv/cres 기반 --system-site-packages venv + ogb.
+결정 필요: (전체 목록과 설명은 reports/009_overnight_summary.md §6)
+1. (003) G3 1차 불충족 → 이식 버그 수정 → 2차 충족 처리의 적절성.
+2. (004) G1 불통과 → 008 skip. 다음 설계 방향.
+3. (005) Electronics G2 통과는 B1(s_H)이 약한 데서 오는 차이가 대부분. 비교 기준 검토.
+4. (005) r 방향 구현 세부.
+5. (006) NaQ 재구현 K=5 support 구성·풀 U, Electronics NaQ-Diff 중복 노드 52–68%.
+6. (007) TEG-orig 환경 구성 불가(conda 없음, torch 1.10.1 py3.10 wheel 없음).
+7. (007) VISION 환경을 venv + ogb로 구성.
+8. (007) VISION은 레이블 없이 전체 노드로 학습 — 비교 조건 차이.
+9. (008) G2 통과 데이터셋만으로 CRES pilot 실행 여부.
+10. (R002·R003) 임시 기본값 전체 검토.
 
 돌고 있는 작업:
 (없음 — runner_all 16:16 종료, 90/90 완료)
