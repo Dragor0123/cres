@@ -75,6 +75,7 @@ TEG-choi 등록부(1000 probe, 9000 / 9100 고정 test / valid 등)를 그대로
 | 22000 + seed | NaQ식 pseudo-episode 샘플링 (006) |
 | 23000 + seed | CRES pseudo-episode 샘플링 (008) |
 | 24000 + seed | 관문 2 에피소드 충돌 시뮬레이션 (005) |
+| 25000 + seed | 순도 곡선 진단 치환 동률 처리 (013) |
 
 ## 7. git
 
