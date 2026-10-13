@@ -13,6 +13,7 @@
 #   3. 학습 스텝을 train_step(sup, pseudo, lam)으로 분리: L = L_sup + lam·L_pseudo.
 #      lam == 0 이면 pseudo 에피소드를 만들지도 forward 하지도 않는다.
 #   4. f1(sklearn) 계산은 기록하지 않는다(난수·계산 경로 영향 없음).
+#   5. 에폭 정확도는 원본처럼 sum(acc)/len(acc) 순차 합(동점 규칙이 부동소수 값에 의존하므로).
 import json
 import os
 import random
@@ -189,7 +190,8 @@ class TEGTrainer:
                 embeddings = self.conv(self.features, self.edges)
                 _, _, out_sm = self.episode_outputs(embeddings, id_support, id_query)
             accs.append(accuracy(out_sm.cpu().detach(), label_list.cpu().detach()))
-        return float(np.mean(accs)), (float(np.mean(lsup)) if lsup else None), (float(np.mean(lps)) if lps else None)
+        # 원본과 같은 순차 합(sum/len). np.mean(pairwise 합)을 쓰면 반올림이 달라져 valid 동점 판정이 바뀐다(003 G3 1차).
+        return sum(accs) / len(accs), (sum(lsup) / len(lsup) if lsup else None), (sum(lps) / len(lps) if lps else None)
 
     def eval_fixed(self, eps):
         """TEG-choi run_fixed_eval와 같은 forward. eps: 고정 에피소드 json 목록. 반환 에피소드별 정확도."""
