@@ -1,0 +1,415 @@
+{
+ "accuracy": {
+  "Amazon_clothing_K1": {
+   "sup": {
+    "seeds": [
+     0.8146000000000001,
+     0.8116,
+     0.7766000000000001
+    ],
+    "mean": 0.8009333333333334
+   },
+   "naqfeat_l0.5": {
+    "seeds": [
+     0.8542000000000001,
+     0.8646,
+     0.8742
+    ],
+    "mean": 0.8643333333333333
+   },
+   "naqfeat_l1.0": {
+    "seeds": [
+     0.8620000000000002,
+     0.8575999999999999,
+     0.8780000000000001
+    ],
+    "mean": 0.8658666666666668
+   },
+   "naqdiff_l0.5": {
+    "seeds": [
+     0.868,
+     0.8614000000000002,
+     0.841
+    ],
+    "mean": 0.8568000000000001
+   },
+   "naqdiff_l1.0": {
+    "seeds": [
+     0.8815999999999999,
+     0.8630000000000001,
+     0.8570000000000002
+    ],
+    "mean": 0.8672000000000001
+   },
+   "cres_l0.5": null,
+   "cres_l1.0": null,
+   "vision": null,
+   "tegorig": null
+  },
+  "Amazon_clothing_K5": {
+   "sup": {
+    "seeds": [
+     0.9180000000000001,
+     0.9019999999999999,
+     0.9006000000000001
+    ],
+    "mean": 0.9068666666666667
+   },
+   "naqfeat_l0.5": null,
+   "naqfeat_l1.0": null,
+   "naqdiff_l0.5": null,
+   "naqdiff_l1.0": null,
+   "cres_l0.5": null,
+   "cres_l1.0": null,
+   "vision": null,
+   "tegorig": null
+  },
+  "Amazon_electronics_K1": {
+   "sup": {
+    "seeds": [
+     0.7509999999999999,
+     0.7116,
+     0.7584000000000001
+    ],
+    "mean": 0.7403333333333334
+   },
+   "naqfeat_l0.5": {
+    "seeds": [
+     0.7926000000000001,
+     0.7654000000000001,
+     0.8053999999999999
+    ],
+    "mean": 0.7878000000000002
+   },
+   "naqfeat_l1.0": {
+    "seeds": [
+     0.802,
+     0.775,
+     0.8128
+    ],
+    "mean": 0.7966000000000001
+   },
+   "naqdiff_l0.5": null,
+   "naqdiff_l1.0": null,
+   "cres_l0.5": null,
+   "cres_l1.0": null,
+   "vision": null,
+   "tegorig": null
+  },
+  "Amazon_electronics_K5": {
+   "sup": {
+    "seeds": [
+     0.8776,
+     0.8674,
+     0.8774000000000001
+    ],
+    "mean": 0.8741333333333334
+   },
+   "naqfeat_l0.5": null,
+   "naqfeat_l1.0": null,
+   "naqdiff_l0.5": null,
+   "naqdiff_l1.0": null,
+   "cres_l0.5": null,
+   "cres_l1.0": null,
+   "vision": null,
+   "tegorig": null
+  },
+  "dblp_K1": {
+   "sup": {
+    "seeds": [
+     0.7537999999999999,
+     0.7514,
+     0.7667999999999999
+    ],
+    "mean": 0.7573333333333333
+   },
+   "naqfeat_l0.5": null,
+   "naqfeat_l1.0": null,
+   "naqdiff_l0.5": null,
+   "naqdiff_l1.0": null,
+   "cres_l0.5": null,
+   "cres_l1.0": null,
+   "vision": null,
+   "tegorig": null
+  },
+  "dblp_K5": {
+   "sup": {
+    "seeds": [
+     0.8423999999999999,
+     0.8488,
+     0.8403999999999999
+    ],
+    "mean": 0.8438666666666665
+   },
+   "naqfeat_l0.5": null,
+   "naqfeat_l1.0": null,
+   "naqdiff_l0.5": null,
+   "naqdiff_l1.0": null,
+   "cres_l0.5": null,
+   "cres_l1.0": null,
+   "vision": null,
+   "tegorig": null
+  }
+ },
+ "lam_selection": {
+  "Amazon_clothing_K1_naq_feat": {
+   "lam": "1.0",
+   "valid_seed_mean": {
+    "0.5": 0.8153333333333334,
+    "1.0": 0.8184
+   }
+  },
+  "Amazon_clothing_K1_naq_diff": {
+   "lam": "1.0",
+   "valid_seed_mean": {
+    "0.5": 0.8151999999999999,
+    "1.0": 0.8242666666666666
+   }
+  },
+  "Amazon_clothing_K1_cres": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_clothing_K5_naq_feat": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_clothing_K5_naq_diff": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_clothing_K5_cres": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_electronics_K1_naq_feat": {
+   "lam": "1.0",
+   "valid_seed_mean": {
+    "0.5": 0.8454666666666667,
+    "1.0": 0.8629333333333333
+   }
+  },
+  "Amazon_electronics_K1_naq_diff": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_electronics_K1_cres": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_electronics_K5_naq_feat": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_electronics_K5_naq_diff": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "Amazon_electronics_K5_cres": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "dblp_K1_naq_feat": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "dblp_K1_naq_diff": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "dblp_K1_cres": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "dblp_K5_naq_feat": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "dblp_K5_naq_diff": {
+   "lam": null,
+   "valid_seed_mean": null
+  },
+  "dblp_K5_cres": {
+   "lam": null,
+   "valid_seed_mean": null
+  }
+ },
+ "pairs": {
+  "Amazon_clothing_K1": {
+   "+NaQ-Feat − sup": {
+    "a": "naqfeat_l1.0",
+    "b": "sup",
+    "mean": 0.06493333333333333,
+    "se": 0.003977047857928697,
+    "n": 600,
+    "clear": true,
+    "per_seed": [
+     {
+      "seed": 0,
+      "mean": 0.047400000000000005,
+      "se": 0.006277198107468173
+     },
+     {
+      "seed": 1,
+      "mean": 0.046,
+      "se": 0.006501642621977894
+     },
+     {
+      "seed": 2,
+      "mean": 0.1014,
+      "se": 0.007150232803603575
+     }
+    ]
+   },
+   "+NaQ-Diff − sup": {
+    "a": "naqdiff_l1.0",
+    "b": "sup",
+    "mean": 0.06626666666666667,
+    "se": 0.003857952685574671,
+    "n": 600,
+    "clear": true,
+    "per_seed": [
+     {
+      "seed": 0,
+      "mean": 0.06699999999999999,
+      "se": 0.005782924092124708
+     },
+     {
+      "seed": 1,
+      "mean": 0.05139999999999999,
+      "se": 0.006474550099811944
+     },
+     {
+      "seed": 2,
+      "mean": 0.08040000000000001,
+      "se": 0.0075447875447541505
+     }
+    ]
+   },
+   "+CRES − sup": "미완료",
+   "+CRES − +NaQ(valid 선택)": "미완료",
+   "sup − VISION": "미완료",
+   "sup − TEG-orig": "미완료"
+  },
+  "Amazon_clothing_K5": {
+   "+NaQ-Feat − sup": "미완료",
+   "+NaQ-Diff − sup": "미완료",
+   "+CRES − sup": "미완료",
+   "+CRES − +NaQ(valid 선택)": "미완료",
+   "sup − VISION": "미완료",
+   "sup − TEG-orig": "미완료"
+  },
+  "Amazon_electronics_K1": {
+   "+NaQ-Feat − sup": {
+    "a": "naqfeat_l1.0",
+    "b": "sup",
+    "mean": 0.05626666666666667,
+    "se": 0.0039725117449906045,
+    "n": 600,
+    "clear": true,
+    "per_seed": [
+     {
+      "seed": 0,
+      "mean": 0.051,
+      "se": 0.006685693117569154
+     },
+     {
+      "seed": 1,
+      "mean": 0.0634,
+      "se": 0.007492857570571079
+     },
+     {
+      "seed": 2,
+      "mean": 0.054400000000000004,
+      "se": 0.006422573256583446
+     }
+    ]
+   },
+   "+NaQ-Diff − sup": "미완료",
+   "+CRES − sup": "미완료",
+   "+CRES − +NaQ(valid 선택)": "미완료",
+   "sup − VISION": "미완료",
+   "sup − TEG-orig": "미완료"
+  },
+  "Amazon_electronics_K5": {
+   "+NaQ-Feat − sup": "미완료",
+   "+NaQ-Diff − sup": "미완료",
+   "+CRES − sup": "미완료",
+   "+CRES − +NaQ(valid 선택)": "미완료",
+   "sup − VISION": "미완료",
+   "sup − TEG-orig": "미완료"
+  },
+  "dblp_K1": {
+   "+NaQ-Feat − sup": "미완료",
+   "+NaQ-Diff − sup": "미완료",
+   "+CRES − sup": "미완료",
+   "+CRES − +NaQ(valid 선택)": "미완료",
+   "sup − VISION": "미완료",
+   "sup − TEG-orig": "미완료"
+  },
+  "dblp_K5": {
+   "+NaQ-Feat − sup": "미완료",
+   "+NaQ-Diff − sup": "미완료",
+   "+CRES − sup": "미완료",
+   "+CRES − +NaQ(valid 선택)": "미완료",
+   "sup − VISION": "미완료",
+   "sup − TEG-orig": "미완료"
+  }
+ },
+ "effective_arms": {
+  "Amazon_clothing_K1": {
+   "sup": "sup",
+   "vision": "vision",
+   "tegorig": "tegorig",
+   "naq_feat": "naqfeat_l1.0",
+   "naq_diff": "naqdiff_l1.0",
+   "cres": null,
+   "naq_best": "naqdiff_l1.0"
+  },
+  "Amazon_clothing_K5": {
+   "sup": "sup",
+   "vision": "vision",
+   "tegorig": "tegorig",
+   "naq_feat": null,
+   "naq_diff": null,
+   "cres": null,
+   "naq_best": null
+  },
+  "Amazon_electronics_K1": {
+   "sup": "sup",
+   "vision": "vision",
+   "tegorig": "tegorig",
+   "naq_feat": "naqfeat_l1.0",
+   "naq_diff": null,
+   "cres": null,
+   "naq_best": null
+  },
+  "Amazon_electronics_K5": {
+   "sup": "sup",
+   "vision": "vision",
+   "tegorig": "tegorig",
+   "naq_feat": null,
+   "naq_diff": null,
+   "cres": null,
+   "naq_best": null
+  },
+  "dblp_K1": {
+   "sup": "sup",
+   "vision": "vision",
+   "tegorig": "tegorig",
+   "naq_feat": null,
+   "naq_diff": null,
+   "cres": null,
+   "naq_best": null
+  },
+  "dblp_K5": {
+   "sup": "sup",
+   "vision": "vision",
+   "tegorig": "tegorig",
+   "naq_feat": null,
+   "naq_diff": null,
+   "cres": null,
+   "naq_best": null
+  }
+ }
+}
