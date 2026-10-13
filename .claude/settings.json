@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(//workspace/refs/**)",
+      "Write(//workspace/refs/**)",
+      "Edit(//workspace/data/**)",
+      "Write(//workspace/data/**)"
+    ]
+  }
+}
