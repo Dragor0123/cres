@@ -12,7 +12,7 @@ T0: 2026-10-13T15:08:55Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 | 003 sweep | done | 15:19 | 15:27 | — | (003 report) | 18/18, 실패 0 |
 | 004 | done | 15:20 | 15:31 | G1 불통과 (0/3) | (004 report) | Electronics 2/3, Clothing·dblp 0/3 |
 | 005 | done | 15:31 | 15:38 | G2 통과 (2/3: Clothing·Electronics, dblp 불통과) | (005 report) | |
-| 006 | running | 15:32 | | — | 50d4d53 | sweep 72개 15:36 투입 (runner_all) |
+| 006 | done | 15:32 | 15:52 | — | (006 report) | 72/72, 실패 0 |
 | 007 | running | 15:40 | | — | 5aca48f | VISION 18개 대기열(006 뒤). TEG-orig: 환경 불가로 skip |
 | 008 | skipped | | | G1 불통과 | | 000 §6 |
 | 009 | todo | | | — | | |
@@ -23,6 +23,7 @@ T0: 2026-10-13T15:08:55Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 3. (005) Electronics G2 통과는 B1(s_H)이 약한 데서 오는 차이가 대부분(core − B2 +0.1~1.0%p, core − B3 ≈ 0). 비교 기준 검토 필요.
 4. (005) r 방향(ψ(u,v)의 u 우선) 구현 세부 검토.
 5. (007) TEG-orig 공식 실행 skip: conda 실행 파일이 없어 python 3.8 환경을 만들 수 없고, torch 1.10.1은 python 3.10 wheel이 없음. 환경 구성 방법 결정 필요.
+7. (006) NaQ 재구현의 K=5 support 구성(anchor + 상위 이웃)과 풀 U(base 제외) 검토. Electronics NaQ-Diff는 pseudo-episode의 52–68%에 중복 노드.
 6. (007) VISION 환경은 conda clone 대신 /venv/cres 기반 --system-site-packages venv + ogb.
 
 돌고 있는 작업:
