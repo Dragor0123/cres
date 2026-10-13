@@ -1,0 +1,181 @@
+{
+ "n_U": 14301,
+ "n_valid_anchor": 4941,
+ "n_test_anchor": 9360,
+ "sec_r": 1.2186896800994873,
+ "m": {
+  "6": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.9880590973487149,
+      "n_accept": 4882,
+      "purity_core": 0.7473986148834229
+     },
+     "test": {
+      "accept_rate": 0.9911324786324787,
+      "n_accept": 9277,
+      "purity_core": 0.8317559957504272
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.8931390406800243,
+      "n_accept": 4413,
+      "purity_core": 0.772263765335083
+     },
+     "test": {
+      "accept_rate": 0.9105769230769231,
+      "n_accept": 8523,
+      "purity_core": 0.8549571633338928
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.6294272414490993,
+      "n_accept": 3110,
+      "purity_core": 0.823922872543335
+     },
+     "test": {
+      "accept_rate": 0.6784188034188035,
+      "n_accept": 6350,
+      "purity_core": 0.9095748662948608
+     }
+    }
+   },
+   "tau_selected": 0.7,
+   "B1_all_test": 0.8112607002258301,
+   "B2_all_test": 0.7907691597938538,
+   "B3_all_test": 0.8263248205184937,
+   "test_accept_rate": 0.6784188034188035,
+   "purity_accepted_test": {
+    "core": 0.9095748662948608,
+    "B1": 0.8999055027961731,
+    "B2": 0.881795346736908,
+    "B3": 0.9065827131271362
+   },
+   "B1_rejected_test": 0.6242524981498718,
+   "diff": {
+    "core_minus_B1": {
+     "mean": 0.00966929103680483,
+     "se": 0.002024784972104588,
+     "n": 6350,
+     "clear": true
+    },
+    "core_minus_B2": {
+     "mean": 0.027779527121172178,
+     "se": 0.0022435924561502282,
+     "n": 6350,
+     "clear": true
+    },
+    "core_minus_B3": {
+     "mean": 0.002992125754281292,
+     "se": 0.0010511166788743243,
+     "n": 6350,
+     "clear": true
+    },
+    "B3_minus_B1": {
+     "mean": 0.006677165287216818,
+     "se": 0.0019006238171264138,
+     "n": 6350,
+     "clear": true
+    }
+   },
+   "pass_seed": true,
+   "core_bank": "records/005_gate2/core_bank_Amazon_clothing_seed2_m6.json",
+   "collision": {
+    "naq_rate": 0.523,
+    "cres_rate": 0.271,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 1.157
+   }
+  },
+  "10": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.9726775956284153,
+      "n_accept": 4806,
+      "purity_core": 0.7257132530212402
+     },
+     "test": {
+      "accept_rate": 0.9736111111111111,
+      "n_accept": 9113,
+      "purity_core": 0.8172940015792847
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.8036834648856507,
+      "n_accept": 3971,
+      "purity_core": 0.7661658525466919
+     },
+     "test": {
+      "accept_rate": 0.847008547008547,
+      "n_accept": 7928,
+      "purity_core": 0.8539775609970093
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.5156850839910949,
+      "n_accept": 2548,
+      "purity_core": 0.8233909010887146
+     },
+     "test": {
+      "accept_rate": 0.559508547008547,
+      "n_accept": 5237,
+      "purity_core": 0.9090234041213989
+     }
+    }
+   },
+   "tau_selected": 0.7,
+   "B1_all_test": 0.7914412021636963,
+   "B2_all_test": 0.7579059600830078,
+   "B3_all_test": 0.8070037961006165,
+   "test_accept_rate": 0.559508547008547,
+   "purity_accepted_test": {
+    "core": 0.9090234041213989,
+    "B1": 0.8997517824172974,
+    "B2": 0.8746738433837891,
+    "B3": 0.9075806736946106
+   },
+   "B1_rejected_test": 0.6538658738136292,
+   "diff": {
+    "core_minus_B1": {
+     "mean": 0.009271635091530131,
+     "se": 0.0018219010643594576,
+     "n": 5237,
+     "clear": true
+    },
+    "core_minus_B2": {
+     "mean": 0.034349605155134556,
+     "se": 0.0022717257552239915,
+     "n": 5237,
+     "clear": true
+    },
+    "core_minus_B3": {
+     "mean": 0.0014427256608068521,
+     "se": 0.0008884271726401601,
+     "n": 5237,
+     "clear": false
+    },
+    "B3_minus_B1": {
+     "mean": 0.007828909454908857,
+     "se": 0.001714771374577918,
+     "n": 5237,
+     "clear": true
+    }
+   },
+   "pass_seed": true,
+   "core_bank": "records/005_gate2/core_bank_Amazon_clothing_seed2_m10.json",
+   "collision": {
+    "naq_rate": 0.57,
+    "cres_rate": 0.227,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 1.271
+   }
+  }
+ },
+ "sec": 6.748017311096191
+}

@@ -1,0 +1,181 @@
+{
+ "n_U": 17169,
+ "n_valid_anchor": 7422,
+ "n_test_anchor": 9747,
+ "sec_r": 1.824533224105835,
+ "m": {
+  "6": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.94529776340609,
+      "n_accept": 7016,
+      "purity_core": 0.40467506647109985
+     },
+     "test": {
+      "accept_rate": 0.9443931466092131,
+      "n_accept": 9205,
+      "purity_core": 0.45766428112983704
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.22082996496901106,
+      "n_accept": 1639,
+      "purity_core": 0.4118364751338959
+     },
+     "test": {
+      "accept_rate": 0.26551759515748435,
+      "n_accept": 2588,
+      "purity_core": 0.5387944579124451
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     },
+     "test": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     }
+    }
+   },
+   "tau_selected": 0.3,
+   "B1_all_test": 0.48373857140541077,
+   "B2_all_test": 0.3385862410068512,
+   "B3_all_test": 0.45534011721611023,
+   "test_accept_rate": 0.9443931466092131,
+   "purity_accepted_test": {
+    "core": 0.45766428112983704,
+    "B1": 0.48749595880508423,
+    "B2": 0.3440087139606476,
+    "B3": 0.46035850048065186
+   },
+   "B1_rejected_test": 0.4199261963367462,
+   "diff": {
+    "core_minus_B1": {
+     "mean": -0.02983161409641983,
+     "se": 0.002287610574324882,
+     "n": 9205,
+     "clear": false
+    },
+    "core_minus_B2": {
+     "mean": 0.11365562414488412,
+     "se": 0.003294741636172277,
+     "n": 9205,
+     "clear": true
+    },
+    "core_minus_B3": {
+     "mean": -0.002694188397517352,
+     "se": 0.0019022469095485895,
+     "n": 9205,
+     "clear": false
+    },
+    "B3_minus_B1": {
+     "mean": -0.027137425745848015,
+     "se": 0.002162562110748494,
+     "n": 9205,
+     "clear": false
+    }
+   },
+   "pass_seed": false,
+   "core_bank": "records/005_gate2/core_bank_dblp_seed0_m6.json",
+   "collision": {
+    "naq_rate": 0.394,
+    "cres_rate": 0.33,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 0.153
+   }
+  },
+  "10": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.8380490433845325,
+      "n_accept": 6220,
+      "purity_core": 0.3929082155227661
+     },
+     "test": {
+      "accept_rate": 0.8492869600902841,
+      "n_accept": 8278,
+      "purity_core": 0.4444847106933594
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.1064403125842091,
+      "n_accept": 790,
+      "purity_core": 0.3850914239883423
+     },
+     "test": {
+      "accept_rate": 0.11593310762285831,
+      "n_accept": 1130,
+      "purity_core": 0.4928220510482788
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     },
+     "test": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     }
+    }
+   },
+   "tau_selected": 0.3,
+   "B1_all_test": 0.4626038670539856,
+   "B2_all_test": 0.31423917412757874,
+   "B3_all_test": 0.43483465909957886,
+   "test_accept_rate": 0.8492869600902841,
+   "purity_accepted_test": {
+    "core": 0.4444847106933594,
+    "B1": 0.47276583313941956,
+    "B2": 0.32766908407211304,
+    "B3": 0.4477866590023041
+   },
+   "B1_rejected_test": 0.4053399860858917,
+   "diff": {
+    "core_minus_B1": {
+     "mean": -0.028281120626167215,
+     "se": 0.0019579901301150335,
+     "n": 8278,
+     "clear": false
+    },
+    "core_minus_B2": {
+     "mean": 0.1168156586196809,
+     "se": 0.0029642998673653155,
+     "n": 8278,
+     "clear": true
+    },
+    "core_minus_B3": {
+     "mean": -0.0033019250139547274,
+     "se": 0.00153898177489466,
+     "n": 8278,
+     "clear": false
+    },
+    "B3_minus_B1": {
+     "mean": -0.02497919565001442,
+     "se": 0.00182203880164852,
+     "n": 8278,
+     "clear": false
+    }
+   },
+   "pass_seed": false,
+   "core_bank": "records/005_gate2/core_bank_dblp_seed0_m10.json",
+   "collision": {
+    "naq_rate": 0.392,
+    "cres_rate": 0.357,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 0.177
+   }
+  }
+ },
+ "sec": 4.920650482177734
+}

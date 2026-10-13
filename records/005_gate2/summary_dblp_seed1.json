@@ -1,0 +1,181 @@
+{
+ "n_U": 16649,
+ "n_valid_anchor": 6902,
+ "n_test_anchor": 9747,
+ "sec_r": 1.8943519592285156,
+ "m": {
+  "6": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.9032164589973921,
+      "n_accept": 6234,
+      "purity_core": 0.5506898164749146
+     },
+     "test": {
+      "accept_rate": 0.884990253411306,
+      "n_accept": 8626,
+      "purity_core": 0.4939485192298889
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.09055346276441611,
+      "n_accept": 625,
+      "purity_core": 0.6787199974060059
+     },
+     "test": {
+      "accept_rate": 0.0887452549502411,
+      "n_accept": 865,
+      "purity_core": 0.6182659268379211
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     },
+     "test": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     }
+    }
+   },
+   "tau_selected": 0.3,
+   "B1_all_test": 0.5184774994850159,
+   "B2_all_test": 0.36444035172462463,
+   "B3_all_test": 0.4763927757740021,
+   "test_accept_rate": 0.884990253411306,
+   "purity_accepted_test": {
+    "core": 0.4939485192298889,
+    "B1": 0.5295385718345642,
+    "B2": 0.3795038163661957,
+    "B3": 0.48982149362564087
+   },
+   "B1_rejected_test": 0.43336308002471924,
+   "diff": {
+    "core_minus_B1": {
+     "mean": -0.035590077348963835,
+     "se": 0.0023561804529234702,
+     "n": 8626,
+     "clear": false
+    },
+    "core_minus_B2": {
+     "mean": 0.11444470377925264,
+     "se": 0.003464701474952419,
+     "n": 8626,
+     "clear": true
+    },
+    "core_minus_B3": {
+     "mean": 0.004127057173772835,
+     "se": 0.0019650712726682522,
+     "n": 8626,
+     "clear": true
+    },
+    "B3_minus_B1": {
+     "mean": -0.03971713463502225,
+     "se": 0.0022863457537317397,
+     "n": 8626,
+     "clear": false
+    }
+   },
+   "pass_seed": false,
+   "core_bank": "records/005_gate2/core_bank_dblp_seed1_m6.json",
+   "collision": {
+    "naq_rate": 0.372,
+    "cres_rate": 0.331,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 0.103
+   }
+  },
+  "10": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.726890756302521,
+      "n_accept": 5017,
+      "purity_core": 0.555400550365448
+     },
+     "test": {
+      "accept_rate": 0.7025751513286139,
+      "n_accept": 6848,
+      "purity_core": 0.4833366274833679
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.01782092147203709,
+      "n_accept": 123,
+      "purity_core": 0.7515808343887329
+     },
+     "test": {
+      "accept_rate": 0.0074894839437775725,
+      "n_accept": 73,
+      "purity_core": 0.6651446223258972
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     },
+     "test": {
+      "accept_rate": 0.0,
+      "n_accept": 0,
+      "purity_core": null
+     }
+    }
+   },
+   "tau_selected": 0.3,
+   "B1_all_test": 0.4954344928264618,
+   "B2_all_test": 0.3390216827392578,
+   "B3_all_test": 0.4526977241039276,
+   "test_accept_rate": 0.7025751513286139,
+   "purity_accepted_test": {
+    "core": 0.4833366274833679,
+    "B1": 0.5203141570091248,
+    "B2": 0.3748864233493805,
+    "B3": 0.48038357496261597
+   },
+   "B1_rejected_test": 0.43666398525238037,
+   "diff": {
+    "core_minus_B1": {
+     "mean": -0.03697754491760317,
+     "se": 0.002236468918706835,
+     "n": 6848,
+     "clear": false
+    },
+    "core_minus_B2": {
+     "mean": 0.10845015753957087,
+     "se": 0.003270442352374855,
+     "n": 6848,
+     "clear": true
+    },
+    "core_minus_B3": {
+     "mean": 0.0029530110388176047,
+     "se": 0.001680143610192136,
+     "n": 6848,
+     "clear": false
+    },
+    "B3_minus_B1": {
+     "mean": -0.03993055597382868,
+     "se": 0.002089669833514743,
+     "n": 6848,
+     "clear": false
+    }
+   },
+   "pass_seed": false,
+   "core_bank": "records/005_gate2/core_bank_dblp_seed1_m10.json",
+   "collision": {
+    "naq_rate": 0.392,
+    "cres_rate": 0.347,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 0.143
+   }
+  }
+ },
+ "sec": 4.4122138023376465
+}

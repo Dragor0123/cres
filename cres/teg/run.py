@@ -31,7 +31,10 @@ def build_pseudo(args, trainer):
         return None
     if args.pseudo in ("naq_feat", "naq_diff"):
         from baselines.naq.generator import NaQGenerator
-        g = NaQGenerator(args.dataset, args.seed, args.shot, args.qry, kind=args.pseudo.split("_")[1], split=trainer_split(trainer))
+        import numpy as np
+        # 풀 U = base가 아닌 노드(분할 파일의 base 클래스로 제외). 생성기는 레이블을 받지 않는다.
+        U = np.where(~np.isin(trainer.labels_np, trainer.class_list_train))[0]
+        g = NaQGenerator(args.dataset, args.seed, args.shot, args.qry, kind=args.pseudo.split("_")[1], U=U)
     elif args.pseudo == "cres":
         from cres.episodes import CRESGenerator
         g = CRESGenerator(args.dataset, args.seed, args.shot, args.qry)

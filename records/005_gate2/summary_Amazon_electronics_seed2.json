@@ -1,0 +1,181 @@
+{
+ "n_U": 18756,
+ "n_valid_anchor": 8540,
+ "n_test_anchor": 10216,
+ "sec_r": 2.208265542984009,
+ "m": {
+  "6": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.9951990632318501,
+      "n_accept": 8499,
+      "purity_core": 0.8072008490562439
+     },
+     "test": {
+      "accept_rate": 0.9958888018794049,
+      "n_accept": 10174,
+      "purity_core": 0.7503637075424194
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.9357142857142857,
+      "n_accept": 7991,
+      "purity_core": 0.8245025277137756
+     },
+     "test": {
+      "accept_rate": 0.9274667188723571,
+      "n_accept": 9475,
+      "purity_core": 0.770575225353241
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.6891100702576113,
+      "n_accept": 5885,
+      "purity_core": 0.8672217726707458
+     },
+     "test": {
+      "accept_rate": 0.6820673453406422,
+      "n_accept": 6968,
+      "purity_core": 0.8433984518051147
+     }
+    }
+   },
+   "tau_selected": 0.7,
+   "B1_all_test": 0.6549922227859497,
+   "B2_all_test": 0.7663273215293884,
+   "B3_all_test": 0.7483751177787781,
+   "test_accept_rate": 0.6820673453406422,
+   "purity_accepted_test": {
+    "core": 0.8433984518051147,
+    "B1": 0.743742823600769,
+    "B2": 0.8471871614456177,
+    "B3": 0.8410160541534424
+   },
+   "B1_rejected_test": 0.4645935893058777,
+   "diff": {
+    "core_minus_B1": {
+     "mean": 0.09965556631149161,
+     "se": 0.0033907991035404717,
+     "n": 6968,
+     "clear": true
+    },
+    "core_minus_B2": {
+     "mean": -0.003788749369804402,
+     "se": 0.0020214916080438074,
+     "n": 6968,
+     "clear": false
+    },
+    "core_minus_B3": {
+     "mean": 0.002382318652849794,
+     "se": 0.0011966835483858407,
+     "n": 6968,
+     "clear": false
+    },
+    "B3_minus_B1": {
+     "mean": 0.09727324750680737,
+     "se": 0.0032807231097970718,
+     "n": 6968,
+     "clear": true
+    }
+   },
+   "pass_seed": true,
+   "core_bank": "records/005_gate2/core_bank_Amazon_electronics_seed2_m6.json",
+   "collision": {
+    "naq_rate": 0.308,
+    "cres_rate": 0.11,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 0.754
+   }
+  },
+  "10": {
+   "tau_table": {
+    "0.3": {
+     "valid": {
+      "accept_rate": 0.9846604215456675,
+      "n_accept": 8409,
+      "purity_core": 0.7792312502861023
+     },
+     "test": {
+      "accept_rate": 0.9839467501957714,
+      "n_accept": 10052,
+      "purity_core": 0.7319604754447937
+     }
+    },
+    "0.5": {
+     "valid": {
+      "accept_rate": 0.8689695550351288,
+      "n_accept": 7421,
+      "purity_core": 0.8066148161888123
+     },
+     "test": {
+      "accept_rate": 0.8629600626468285,
+      "n_accept": 8816,
+      "purity_core": 0.7680228352546692
+     }
+    },
+    "0.7": {
+     "valid": {
+      "accept_rate": 0.5653395784543326,
+      "n_accept": 4828,
+      "purity_core": 0.8511460423469543
+     },
+     "test": {
+      "accept_rate": 0.5810493343774471,
+      "n_accept": 5936,
+      "purity_core": 0.8545222878456116
+     }
+    }
+   },
+   "tau_selected": 0.7,
+   "B1_all_test": 0.641694962978363,
+   "B2_all_test": 0.7417232394218445,
+   "B3_all_test": 0.724092960357666,
+   "test_accept_rate": 0.5810493343774471,
+   "purity_accepted_test": {
+    "core": 0.8545222878456116,
+    "B1": 0.7574310898780823,
+    "B2": 0.8531745672225952,
+    "B3": 0.8511530756950378
+   },
+   "B1_rejected_test": 0.4811786413192749,
+   "diff": {
+    "core_minus_B1": {
+     "mean": 0.09709119114954516,
+     "se": 0.003249400860064732,
+     "n": 5936,
+     "clear": true
+    },
+    "core_minus_B2": {
+     "mean": 0.0013477077639870085,
+     "se": 0.0018415070908410402,
+     "n": 5936,
+     "clear": false
+    },
+    "core_minus_B3": {
+     "mean": 0.0033692716585718234,
+     "se": 0.0010443781397846783,
+     "n": 5936,
+     "clear": true
+    },
+    "B3_minus_B1": {
+     "mean": 0.0937219194583394,
+     "se": 0.003095141048467622,
+     "n": 5936,
+     "clear": true
+    }
+   },
+   "pass_seed": true,
+   "core_bank": "records/005_gate2/core_bank_Amazon_electronics_seed2_m10.json",
+   "collision": {
+    "naq_rate": 0.301,
+    "cres_rate": 0.075,
+    "cres_fail_rate": 0.0,
+    "cres_redraw_mean": 0.795
+   }
+  }
+ },
+ "sec": 6.49955940246582
+}
