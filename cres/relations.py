@@ -142,14 +142,19 @@ class Relations:
         keys = torch.unique(keys)  # 정렬 + 중복 제거
         return keys // N, keys % N
 
-    def psi(self, u, v, block=16384):
-        """임의 쌍의 ψ. u, v: GPU long 텐서. 반환 (P, 9) float32."""
+    def psi(self, u, v, block=16384, with_sim=True):
+        """임의 쌍의 ψ. u, v: GPU long 텐서. 반환 (P, 9) float32. with_sim=False면 s_X, s_H 자리는 0(호출 측에서 채움)."""
         out = []
         N = self.N
+        if not with_sim:
+            block = max(block, 1_000_000)
         for s in range(0, len(u), block):
             uu, vv = u[s:s + block], v[s:s + block]
-            sX = (self.Xn[uu] * self.Xn[vv]).sum(1)
-            sH = (self.Hn[uu] * self.Hn[vv]).sum(1)
+            if with_sim:
+                sX = (self.Xn[uu] * self.Xn[vv]).sum(1)
+                sH = (self.Hn[uu] * self.Hn[vv]).sum(1)
+            else:
+                sX = sH = torch.zeros(len(uu), device=uu.device)
             q, qr = uu * N + vv, vv * N + uu
             rX, rH = self._rank(self.sortX, self.ordX, q), self._rank(self.sortH, self.ordH, q)
             rXr, rHr = self._rank(self.sortX, self.ordX, qr), self._rank(self.sortH, self.ordH, qr)
