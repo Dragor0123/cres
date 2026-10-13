@@ -1,0 +1,218 @@
+[
+ {
+  "key": "Amazon_clothing_seed0_K1_test",
+  "tegchoi": "14b8d24f21b59b11b0d8fabdde3b480bea1292c7",
+  "ours": "14b8d24f21b59b11b0d8fabdde3b480bea1292c7",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed0_K1_valid",
+  "tegchoi": "92c9345e67674c570196d8ddd6cc1dd2d40096ac",
+  "ours": "92c9345e67674c570196d8ddd6cc1dd2d40096ac",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed0_K5_test",
+  "tegchoi": "de95732cd5a7edf6c417990adc5be271e4c10ad3",
+  "ours": "de95732cd5a7edf6c417990adc5be271e4c10ad3",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed0_K5_valid",
+  "tegchoi": "1bab87ed4fe93256bd4cd73c22211d0c7de2bd0a",
+  "ours": "1bab87ed4fe93256bd4cd73c22211d0c7de2bd0a",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed1_K1_test",
+  "tegchoi": "b8f704cf9ff49436d4d765b85cc24617921284da",
+  "ours": "b8f704cf9ff49436d4d765b85cc24617921284da",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed1_K1_valid",
+  "tegchoi": "b5097b55f887bee1910a1826aed3cb28f98a34d6",
+  "ours": "b5097b55f887bee1910a1826aed3cb28f98a34d6",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed1_K5_test",
+  "tegchoi": "fc094b5d12b9c5316e2618a1757f7df1ca1395c8",
+  "ours": "fc094b5d12b9c5316e2618a1757f7df1ca1395c8",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed1_K5_valid",
+  "tegchoi": "035df62815e306218b1ac28bae7e644b435d2c55",
+  "ours": "035df62815e306218b1ac28bae7e644b435d2c55",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed2_K1_test",
+  "tegchoi": "bdf41b2f4c9a701ff9bbf4f39e28d55ff4a405e5",
+  "ours": "bdf41b2f4c9a701ff9bbf4f39e28d55ff4a405e5",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed2_K1_valid",
+  "tegchoi": "a44e914819838858641c3cc2447777ddcc79bb50",
+  "ours": "a44e914819838858641c3cc2447777ddcc79bb50",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed2_K5_test",
+  "tegchoi": "99a4c883d771524abdb79ca193df3b3cd665e5b0",
+  "ours": "99a4c883d771524abdb79ca193df3b3cd665e5b0",
+  "match": true
+ },
+ {
+  "key": "Amazon_clothing_seed2_K5_valid",
+  "tegchoi": "7c2e38724c58f33e71f2a61f05ad44d7944a3af2",
+  "ours": "7c2e38724c58f33e71f2a61f05ad44d7944a3af2",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed0_K1_test",
+  "tegchoi": "cd9bebe37239ce011e1b48e5abe4acb3de4cacc0",
+  "ours": "cd9bebe37239ce011e1b48e5abe4acb3de4cacc0",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed0_K1_valid",
+  "tegchoi": "7fa8f8127c41d80bc1d73689cdba2fdc343177a7",
+  "ours": "7fa8f8127c41d80bc1d73689cdba2fdc343177a7",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed0_K5_test",
+  "tegchoi": "edf3041aae8362d0b84ed83ce826b800162b034a",
+  "ours": "edf3041aae8362d0b84ed83ce826b800162b034a",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed0_K5_valid",
+  "tegchoi": "76f47b1a1fb75ad79a96af583f8c288b7087d83a",
+  "ours": "76f47b1a1fb75ad79a96af583f8c288b7087d83a",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed1_K1_test",
+  "tegchoi": "32553df6f3c324c547ea536e5627b1a6a56e65e6",
+  "ours": "32553df6f3c324c547ea536e5627b1a6a56e65e6",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed1_K1_valid",
+  "tegchoi": "adf471a7b1ee53b747745356a41d60e7b8bc82a5",
+  "ours": "adf471a7b1ee53b747745356a41d60e7b8bc82a5",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed1_K5_test",
+  "tegchoi": "5f0ade8f4f2a64dc9baeefff08f90bd460f795d2",
+  "ours": "5f0ade8f4f2a64dc9baeefff08f90bd460f795d2",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed1_K5_valid",
+  "tegchoi": "bf8d0c4ad77ab69ac08aba5010621b8cad0fc784",
+  "ours": "bf8d0c4ad77ab69ac08aba5010621b8cad0fc784",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed2_K1_test",
+  "tegchoi": "1c985ab845329667def2dd6c4f3d913777dce783",
+  "ours": "1c985ab845329667def2dd6c4f3d913777dce783",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed2_K1_valid",
+  "tegchoi": "169256a50645bdcfe3864f292c3c13effd31dfda",
+  "ours": "169256a50645bdcfe3864f292c3c13effd31dfda",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed2_K5_test",
+  "tegchoi": "d118e3ce09c4385ce8f9189068fc7cb7df5f8811",
+  "ours": "d118e3ce09c4385ce8f9189068fc7cb7df5f8811",
+  "match": true
+ },
+ {
+  "key": "Amazon_electronics_seed2_K5_valid",
+  "tegchoi": "f6bc92246338895d0b6fe646cd8e137afcd529c4",
+  "ours": "f6bc92246338895d0b6fe646cd8e137afcd529c4",
+  "match": true
+ },
+ {
+  "key": "dblp_seed0_K1_test",
+  "tegchoi": "5bd7075130e46b6363bb59ef19733fe3fcfc30bb",
+  "ours": "5bd7075130e46b6363bb59ef19733fe3fcfc30bb",
+  "match": true
+ },
+ {
+  "key": "dblp_seed0_K1_valid",
+  "tegchoi": "bf0674d288f57ba69a9b0a9e5acc7fe7fc8533a4",
+  "ours": "bf0674d288f57ba69a9b0a9e5acc7fe7fc8533a4",
+  "match": true
+ },
+ {
+  "key": "dblp_seed0_K5_test",
+  "tegchoi": "94b2c7fc22b93f2c94df70b373a9e9fff96e2493",
+  "ours": "94b2c7fc22b93f2c94df70b373a9e9fff96e2493",
+  "match": true
+ },
+ {
+  "key": "dblp_seed0_K5_valid",
+  "tegchoi": "d20d03a0e824a795c0a817d994595ab9080c30a6",
+  "ours": "d20d03a0e824a795c0a817d994595ab9080c30a6",
+  "match": true
+ },
+ {
+  "key": "dblp_seed1_K1_test",
+  "tegchoi": "8bfc51dfbf9437228e9f581e7bb531573fab786f",
+  "ours": "8bfc51dfbf9437228e9f581e7bb531573fab786f",
+  "match": true
+ },
+ {
+  "key": "dblp_seed1_K1_valid",
+  "tegchoi": "87137a3fa9383bd3787ccf2040a1fab3855d9c05",
+  "ours": "87137a3fa9383bd3787ccf2040a1fab3855d9c05",
+  "match": true
+ },
+ {
+  "key": "dblp_seed1_K5_test",
+  "tegchoi": "211a197a35f34f43f5c91f9c23add8b5715f99c6",
+  "ours": "211a197a35f34f43f5c91f9c23add8b5715f99c6",
+  "match": true
+ },
+ {
+  "key": "dblp_seed1_K5_valid",
+  "tegchoi": "1c4ad89a5b193f89a8fbac01ab95822014eaa5e5",
+  "ours": "1c4ad89a5b193f89a8fbac01ab95822014eaa5e5",
+  "match": true
+ },
+ {
+  "key": "dblp_seed2_K1_test",
+  "tegchoi": "8d3b7a57755be897c54f52b42155d8acf1824ba8",
+  "ours": "8d3b7a57755be897c54f52b42155d8acf1824ba8",
+  "match": true
+ },
+ {
+  "key": "dblp_seed2_K1_valid",
+  "tegchoi": "ae0d773ae3d23b58e670b6f336dfb1cb657d7cd1",
+  "ours": "ae0d773ae3d23b58e670b6f336dfb1cb657d7cd1",
+  "match": true
+ },
+ {
+  "key": "dblp_seed2_K5_test",
+  "tegchoi": "239cd638936467e3800b2bf639f22489dcf35515",
+  "ours": "239cd638936467e3800b2bf639f22489dcf35515",
+  "match": true
+ },
+ {
+  "key": "dblp_seed2_K5_valid",
+  "tegchoi": "bb1aefbb05c74b14e1da17bcc0ebb7927acc5924",
+  "ours": "bb1aefbb05c74b14e1da17bcc0ebb7927acc5924",
+  "match": true
+ }
+]
