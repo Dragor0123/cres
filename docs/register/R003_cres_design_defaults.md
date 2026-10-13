@@ -29,5 +29,5 @@
 - 코사인 동점·순위: 순위는 1부터(가장 가까운 이웃 = 1). 자기 자신은 순위 계산에서 뺀다.
 - "2홉 이내" = (A + A²)의 비대각 원소 > 0 (자기 루프 제외, 1홉 포함).
 - k-means: 초기 중심 = rng로 뽑은 서로 다른 노드 k개(재시작마다 다른 추첨), 유클리드 거리, 50회 고정 반복. TruncatedSVD는 sklearn `randomized`, `random_state = 20000`.
-- 로지스틱 회귀: sklearn `LogisticRegression(penalty="l2", solver="lbfgs", max_iter=1000)`. 학습 쌍이 많으면 rng `21000+seed`로 최대 200,000쌍 표본 추출(양성 전부 + 음성 표본은 아님 — 무작위 균등 표본). valid–valid 쌍 AUROC 계산도 같은 방식으로 최대 200,000쌍.
+- 로지스틱 회귀: sklearn `LogisticRegression(penalty="l2", solver="lbfgs", max_iter=1000)`. 학습 쌍이 많으면 rng `21000+seed`로 최대 200,000쌍을 무작위 균등 추출(양성·음성 구분 없이). valid–valid 쌍 AUROC 계산도 같은 방식으로 최대 200,000쌍.
 - MLP: 은닉 32 × 2층(ReLU), Adam lr 1e-3, 배치 4096, 최대 50 에폭, valid AUROC가 5 에폭 연속 개선되지 않으면 중단, 최고 valid 시점 가중치 사용.
