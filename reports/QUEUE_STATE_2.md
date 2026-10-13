@@ -7,15 +7,19 @@ T0: 2026-10-13T22:57:40Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 | 항목 | 상태 | 시작 | 종료 | 게이트 | 커밋 | 비고 |
 |---|---|---|---|---|---|---|
 | R004 | done | 22:57 | 22:58 | — | (this) | 010 §2 그대로 |
-| 011 | running | 22:58 | | — | | 구현 완료, sweep 23:11~ |
+| 011 | done | 22:58 | 23:40 | — | (011 report) | 72/72 + allpool 18, 실패 0. 006 superseded |
 | 012 | done | 23:02 | 23:11 | — | (012 report) | 36/36, 실패 0 |
-| 013 | pending | | | — | | |
-| 014 | pending | | | — | | |
+| 013 | running | 23:00 | | — | | 구현 완료, sweep 23:33~ (lambda_selected 사용) |
+| 014 | running | 23:20 | | — | | 생성기 구현 완료. 4개가 013보다 먼저 시작됨(대기열 재정렬 전) |
 | 015 | pending | | | — | | |
 | 016 | pending | | | — | | |
 
 결정 필요:
 1. (012) 체크포인트 선택이 고정 valid 100이 아니라 학습 중 전역 random valid 50(TEG-choi 규칙). sup2는 이 50개가 sup과 다름. 현행 유지 여부.
+2. (011) (a) 점검 해당 칸 없음(006 중복률 0 칸 없음) → 생성기 단위 점검으로 대체. 충분한지.
+3. (011) pseudo query 수 Q=5 유지(원 NaQ 학습 q_query 10).
+4. (011) allpool 이웃 표는 전체 노드·seed 무관 1회.
 
 돌고 있는 작업:
-- job_runner (results/queue2/, exit_when_idle 0): 011 72 → 014 24
+- job_runner (results/queue2/, exit_when_idle 0): 013 90 → 014 24 (014 4개 선행)
+- tools/cres_gen_stats.py (014 생성기 통계, GPU-B)

@@ -1,0 +1,310 @@
+{
+ "n_episodes": 1000,
+ "label_use": "stats only: true class of anchors (way collision)",
+ "cells": [
+  {
+   "dataset": "Amazon_clothing",
+   "K": 1,
+   "seed": 0,
+   "kind": "feat",
+   "v1_dup_rate": 0.025,
+   "v1_way_class_collision_rate": 0.344,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.344
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "K": 5,
+   "seed": 0,
+   "kind": "feat",
+   "v1_dup_rate": 0.055,
+   "v1_way_class_collision_rate": 0.344,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.344
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "K": 1,
+   "seed": 0,
+   "kind": "diff",
+   "v1_dup_rate": 0.083,
+   "v1_way_class_collision_rate": 0.344,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.344
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "K": 5,
+   "seed": 0,
+   "kind": "diff",
+   "v1_dup_rate": 0.126,
+   "v1_way_class_collision_rate": 0.344,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.344
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "K": 1,
+   "seed": 0,
+   "kind": "feat",
+   "v1_dup_rate": 0.013,
+   "v1_way_class_collision_rate": 0.179,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.179
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "K": 5,
+   "seed": 0,
+   "kind": "feat",
+   "v1_dup_rate": 0.04,
+   "v1_way_class_collision_rate": 0.179,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.179
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "K": 1,
+   "seed": 0,
+   "kind": "diff",
+   "v1_dup_rate": 0.517,
+   "v1_way_class_collision_rate": 0.179,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.179
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "K": 5,
+   "seed": 0,
+   "kind": "diff",
+   "v1_dup_rate": 0.682,
+   "v1_way_class_collision_rate": 0.179,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.179
+  },
+  {
+   "dataset": "dblp",
+   "K": 1,
+   "seed": 0,
+   "kind": "feat",
+   "v1_dup_rate": 0.047,
+   "v1_way_class_collision_rate": 0.213,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.213
+  },
+  {
+   "dataset": "dblp",
+   "K": 5,
+   "seed": 0,
+   "kind": "feat",
+   "v1_dup_rate": 0.101,
+   "v1_way_class_collision_rate": 0.213,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.213
+  },
+  {
+   "dataset": "dblp",
+   "K": 1,
+   "seed": 0,
+   "kind": "diff",
+   "v1_dup_rate": 0.016,
+   "v1_way_class_collision_rate": 0.213,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.213
+  },
+  {
+   "dataset": "dblp",
+   "K": 5,
+   "seed": 0,
+   "kind": "diff",
+   "v1_dup_rate": 0.041,
+   "v1_way_class_collision_rate": 0.213,
+   "v2_anchor_redraws": 0,
+   "v2_episodes_with_redraw": 0,
+   "v2_way_class_collision_rate": 0.213
+  }
+ ],
+ "prefix_check": [
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 0,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 0,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": false,
+   "rows_differ": 36
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 1,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 1,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": false,
+   "rows_differ": 35
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 2,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 2,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": false,
+   "rows_differ": 31
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 0,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 0,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": false,
+   "rows_differ": 49
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 1,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 1,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": false,
+   "rows_differ": 27
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 2,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 2,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": false,
+   "rows_differ": 58
+  },
+  {
+   "dataset": "dblp",
+   "seed": 0,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "dblp",
+   "seed": 0,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "dblp",
+   "seed": 1,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "dblp",
+   "seed": 1,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "dblp",
+   "seed": 2,
+   "kind": "feat",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  },
+  {
+   "dataset": "dblp",
+   "seed": 2,
+   "kind": "diff",
+   "top50[:, :9] == top9 (006)": true,
+   "rows_differ": 0
+  }
+ ],
+ "k1_sequence_check": [
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 0,
+   "kind": "feat",
+   "v1_first_duplicate_episode": 10,
+   "first_differing_episode": 10
+  },
+  {
+   "dataset": "Amazon_clothing",
+   "seed": 0,
+   "kind": "diff",
+   "v1_first_duplicate_episode": 20,
+   "first_differing_episode": 20
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 0,
+   "kind": "feat",
+   "v1_first_duplicate_episode": 89,
+   "first_differing_episode": 89
+  },
+  {
+   "dataset": "Amazon_electronics",
+   "seed": 0,
+   "kind": "diff",
+   "v1_first_duplicate_episode": 0,
+   "first_differing_episode": 0
+  },
+  {
+   "dataset": "dblp",
+   "seed": 0,
+   "kind": "feat",
+   "v1_first_duplicate_episode": 12,
+   "first_differing_episode": 12
+  },
+  {
+   "dataset": "dblp",
+   "seed": 0,
+   "kind": "diff",
+   "v1_first_duplicate_episode": 35,
+   "first_differing_episode": 35
+  }
+ ]
+}

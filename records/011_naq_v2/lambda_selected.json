@@ -1,0 +1,65 @@
+{
+ "Amazon_clothing_K1_naq_feat": "1.0",
+ "Amazon_clothing_K1_naq_diff": "1.0",
+ "Amazon_clothing_K5_naq_feat": "1.0",
+ "Amazon_clothing_K5_naq_diff": "0.5",
+ "Amazon_electronics_K1_naq_feat": "1.0",
+ "Amazon_electronics_K1_naq_diff": "1.0",
+ "Amazon_electronics_K5_naq_feat": "0.5",
+ "Amazon_electronics_K5_naq_diff": "0.5",
+ "dblp_K1_naq_feat": "1.0",
+ "dblp_K1_naq_diff": "1.0",
+ "dblp_K5_naq_feat": "0.5",
+ "dblp_K5_naq_diff": "1.0",
+ "_valid_seed_mean": {
+  "Amazon_clothing_K1_naq_feat": {
+   "0.5": 0.8148000000000001,
+   "1.0": 0.82
+  },
+  "Amazon_clothing_K1_naq_diff": {
+   "0.5": 0.8136,
+   "1.0": 0.82
+  },
+  "Amazon_clothing_K5_naq_feat": {
+   "0.5": 0.8953333333333333,
+   "1.0": 0.8956
+  },
+  "Amazon_clothing_K5_naq_diff": {
+   "0.5": 0.8952,
+   "1.0": 0.8951999999999999
+  },
+  "Amazon_electronics_K1_naq_feat": {
+   "0.5": 0.8460000000000001,
+   "1.0": 0.8642666666666666
+  },
+  "Amazon_electronics_K1_naq_diff": {
+   "0.5": 0.8342666666666666,
+   "1.0": 0.8418666666666667
+  },
+  "Amazon_electronics_K5_naq_feat": {
+   "0.5": 0.9279999999999999,
+   "1.0": 0.9245333333333333
+  },
+  "Amazon_electronics_K5_naq_diff": {
+   "0.5": 0.9178666666666667,
+   "1.0": 0.9154666666666667
+  },
+  "dblp_K1_naq_feat": {
+   "0.5": 0.7605333333333334,
+   "1.0": 0.7654666666666667
+  },
+  "dblp_K1_naq_diff": {
+   "0.5": 0.7705333333333333,
+   "1.0": 0.7738666666666666
+  },
+  "dblp_K5_naq_feat": {
+   "0.5": 0.8494666666666667,
+   "1.0": 0.8477333333333333
+  },
+  "dblp_K5_naq_diff": {
+   "0.5": 0.8572000000000001,
+   "1.0": 0.8594666666666667
+  }
+ },
+ "_rule": "seed 0-2 mean fixed-valid (100 episodes) best; tie -> smaller lambda"
+}
