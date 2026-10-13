@@ -45,4 +45,56 @@
 
 모델·손실·학습 에피소드 생성·옵티마이저·조기 종료 규칙은 바꾸지 않았다. 학습 m_qry는 기본값 10, VISION 자체 seed(`--seed`)는 0/1/2(= `--cres_seed`)로 주었다(기본 1234).
 
-<!-- RESULTS -->
+## 3. 실행 결과 (VISION, 18/18 완료, 실패·재시도 0)
+
+job_runner 15:50–16:15 UTC(GPU당 2개 동시, 006 이후). 출처 `records/007_vision/run_meta.jsonl`, `ep_acc_*_vision.csv`.
+
+| 데이터셋 | K | seed | 고정 test % | best dev(고정 valid) % | best epoch | 시간 s |
+|---|---|---|---|---|---|---|
+| Amazon_clothing | 1 | 0 | 84.08 | 81.88 | 1800 | 291 |
+| Amazon_clothing | 1 | 1 | 82.78 | 77.96 | 700 | 100 |
+| Amazon_clothing | 1 | 2 | 82.72 | 81.04 | 800 | 122 |
+| Amazon_electronics | 1 | 0 | 76.66 | 88.48 | 1880 | 331 |
+| Amazon_electronics | 1 | 1 | 77.06 | 82.52 | 2920 | 678 |
+| Amazon_electronics | 1 | 2 | 78.68 | 88.00 | 2720 | 645 |
+| dblp | 1 | 0 | 72.46 | 74.68 | 1060 | 384 |
+| dblp | 1 | 1 | 70.16 | 73.40 | 720 | 290 |
+| dblp | 1 | 2 | 72.20 | 69.76 | 1080 | 232 |
+| Amazon_clothing | 5 | 0 | 90.48 | 89.16 | 780 | 163 |
+| Amazon_clothing | 5 | 1 | 89.82 | 88.88 | 1100 | 198 |
+| Amazon_clothing | 5 | 2 | 89.82 | 89.44 | 1500 | 223 |
+| Amazon_electronics | 5 | 0 | 85.60 | 91.52 | 600 | 175 |
+| Amazon_electronics | 5 | 1 | 86.66 | 89.72 | 1000 | 191 |
+| Amazon_electronics | 5 | 2 | 88.60 | 93.28 | 2120 | 499 |
+| dblp | 5 | 0 | 80.92 | 82.84 | 1320 | 438 |
+| dblp | 5 | 1 | 81.38 | 84.68 | 1460 | 392 |
+| dblp | 5 | 2 | 79.84 | 76.64 | 780 | 348 |
+
+### 지도 단독(003 이식본) − VISION, 고정 test 짝지은 차 (%p, 600 에피소드 ± SE; seed별)
+
+| 데이터셋 | K | 평균 ± SE | 분명(평균 > 0, > 2·SE) | seed 0 / 1 / 2 |
+|---|---|---|---|---|
+| Amazon_clothing | 1 | −3.10 ± 0.45 | 아니오 | −2.62 / −1.62 / −5.06 |
+| Amazon_clothing | 5 | +0.65 ± 0.27 | 예 | +1.32 / +0.38 / +0.24 |
+| Amazon_electronics | 1 | −3.43 ± 0.49 | 아니오 | −1.56 / −5.90 / −2.84 |
+| Amazon_electronics | 5 | +0.46 ± 0.33 | 아니오 | +2.16 / +0.08 / −0.86 |
+| dblp | 1 | +4.13 ± 0.45 | 예 | +2.92 / +4.98 / +4.48 |
+| dblp | 5 | +3.67 ± 0.35 | 예 | +3.32 / +3.50 / +4.20 |
+
+음수 행은 방향을 바꾸면(VISION − 지도) 평균 > 0 이고 > 2·SE다(Clothing K=1 +3.10 ± 0.45, Electronics K=1 +3.43 ± 0.49).
+
+## 4. 게이트
+
+007은 게이트 없음.
+
+## 5. 결정 필요
+
+1. TEG-orig 공식 실행: conda 없이 python 3.8 + torch 1.10.1(cu113) 환경을 만들 방법이 없어 skip. conda(또는 miniforge) 설치 허용 여부, 또는 cres 환경에서 TEG-orig를 돌릴지 결정 필요.
+2. VISION 환경을 conda clone 대신 `/venv/cres` 기반 venv + ogb로 만들었다(지시서 1순위와 다름).
+3. VISION은 학습에 레이블을 쓰지 않고 전체 노드(test 클래스 노드 포함)에서 pseudo-task를 만든다(원 코드 그대로). 지도 단독·+NaQ식은 base 레이블을 쓰고 pseudo 풀은 base 외 노드다. 비교 조건 차이에 대한 사용자 판단 필요.
+4. VISION 모델 선택은 고정 valid 100 에피소드(어댑터)로 20에폭마다, 학습 m_qry 10(기본값), VISION 자체 seed = 0/1/2(기본 1234)로 실행했다.
+
+## 6. 참고 리포
+
+refs/VISION은 읽기만 했다(실행은 `git clone` 사본). clean 확인은 009에서.
+

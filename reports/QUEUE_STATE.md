@@ -13,7 +13,7 @@ T0: 2026-10-13T15:08:55Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 | 004 | done | 15:20 | 15:31 | G1 불통과 (0/3) | (004 report) | Electronics 2/3, Clothing·dblp 0/3 |
 | 005 | done | 15:31 | 15:38 | G2 통과 (2/3: Clothing·Electronics, dblp 불통과) | (005 report) | |
 | 006 | done | 15:32 | 15:52 | — | (006 report) | 72/72, 실패 0 |
-| 007 | running | 15:40 | | — | 5aca48f | VISION 18개 대기열(006 뒤). TEG-orig: 환경 불가로 skip |
+| 007 | done | 15:40 | 16:18 | — | (007 report) | VISION 18/18. TEG-orig skip(환경 불가) |
 | 008 | skipped | | | G1 불통과 | | 000 §6 |
 | 009 | todo | | | — | | |
 
@@ -27,4 +27,4 @@ T0: 2026-10-13T15:08:55Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 6. (007) VISION 환경은 conda clone 대신 /venv/cres 기반 --system-site-packages venv + ogb.
 
 돌고 있는 작업:
-- runner_all (pid in results/sweep/runner_all.pid): 006 NaQ 72개 + 007 VISION 18개, GPU-A·B 각 2개 동시, --stop_after 23:08:55Z
+(없음 — runner_all 16:16 종료, 90/90 완료)

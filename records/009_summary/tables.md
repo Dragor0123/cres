@@ -9,7 +9,7 @@
 | Amazon_clothing | 1 | naqdiff_l1.0 | 88.16 / 86.30 / 85.70 | 86.72 |
 | Amazon_clothing | 1 | cres_l0.5 | 미완료 | 미완료 |
 | Amazon_clothing | 1 | cres_l1.0 | 미완료 | 미완료 |
-| Amazon_clothing | 1 | vision | 미완료 | 미완료 |
+| Amazon_clothing | 1 | vision | 84.08 / 82.78 / 82.72 | 83.19 |
 | Amazon_clothing | 1 | tegorig | 미완료 | 미완료 |
 | Amazon_clothing | 5 | sup | 91.80 / 90.20 / 90.06 | 90.69 |
 | Amazon_clothing | 5 | naqfeat_l0.5 | 93.94 / 91.24 / 92.26 | 92.48 |
@@ -18,7 +18,7 @@
 | Amazon_clothing | 5 | naqdiff_l1.0 | 90.12 / 90.68 / 90.58 | 90.46 |
 | Amazon_clothing | 5 | cres_l0.5 | 미완료 | 미완료 |
 | Amazon_clothing | 5 | cres_l1.0 | 미완료 | 미완료 |
-| Amazon_clothing | 5 | vision | 미완료 | 미완료 |
+| Amazon_clothing | 5 | vision | 90.48 / 89.82 / 89.82 | 90.04 |
 | Amazon_clothing | 5 | tegorig | 미완료 | 미완료 |
 | Amazon_electronics | 1 | sup | 75.10 / 71.16 / 75.84 | 74.03 |
 | Amazon_electronics | 1 | naqfeat_l0.5 | 79.26 / 76.54 / 80.54 | 78.78 |
@@ -27,7 +27,7 @@
 | Amazon_electronics | 1 | naqdiff_l1.0 | 77.24 / 71.58 / 77.58 | 75.47 |
 | Amazon_electronics | 1 | cres_l0.5 | 미완료 | 미완료 |
 | Amazon_electronics | 1 | cres_l1.0 | 미완료 | 미완료 |
-| Amazon_electronics | 1 | vision | 미완료 | 미완료 |
+| Amazon_electronics | 1 | vision | 76.66 / 77.06 / 78.68 | 77.47 |
 | Amazon_electronics | 1 | tegorig | 미완료 | 미완료 |
 | Amazon_electronics | 5 | sup | 87.76 / 86.74 / 87.74 | 87.41 |
 | Amazon_electronics | 5 | naqfeat_l0.5 | 89.80 / 89.44 / 90.82 | 90.02 |
@@ -36,7 +36,7 @@
 | Amazon_electronics | 5 | naqdiff_l1.0 | 85.16 / 85.40 / 87.50 | 86.02 |
 | Amazon_electronics | 5 | cres_l0.5 | 미완료 | 미완료 |
 | Amazon_electronics | 5 | cres_l1.0 | 미완료 | 미완료 |
-| Amazon_electronics | 5 | vision | 미완료 | 미완료 |
+| Amazon_electronics | 5 | vision | 85.60 / 86.66 / 88.60 | 86.95 |
 | Amazon_electronics | 5 | tegorig | 미완료 | 미완료 |
 | dblp | 1 | sup | 75.38 / 75.14 / 76.68 | 75.73 |
 | dblp | 1 | naqfeat_l0.5 | 77.08 / 75.62 / 78.06 | 76.92 |
@@ -45,7 +45,7 @@
 | dblp | 1 | naqdiff_l1.0 | 78.04 / 76.74 / 79.64 | 78.14 |
 | dblp | 1 | cres_l0.5 | 미완료 | 미완료 |
 | dblp | 1 | cres_l1.0 | 미완료 | 미완료 |
-| dblp | 1 | vision | 미완료 | 미완료 |
+| dblp | 1 | vision | 72.46 / 70.16 / 72.20 | 71.61 |
 | dblp | 1 | tegorig | 미완료 | 미완료 |
 | dblp | 5 | sup | 84.24 / 84.88 / 84.04 | 84.39 |
 | dblp | 5 | naqfeat_l0.5 | 85.02 / 86.26 / 85.46 | 85.58 |
@@ -54,7 +54,7 @@
 | dblp | 5 | naqdiff_l1.0 | 85.78 / 86.60 / 86.24 | 86.21 |
 | dblp | 5 | cres_l0.5 | 미완료 | 미완료 |
 | dblp | 5 | cres_l1.0 | 미완료 | 미완료 |
-| dblp | 5 | vision | 미완료 | 미완료 |
+| dblp | 5 | vision | 80.92 / 81.38 / 79.84 | 80.71 |
 | dblp | 5 | tegorig | 미완료 | 미완료 |
 
 ### λ 선택 (seed 평균 고정 valid, %)
@@ -88,35 +88,35 @@
 | Amazon_clothing | 1 | +NaQ-Diff − sup | naqdiff_l1.0 − sup | +6.63 ± 0.39 | 예 | +6.70 / +5.14 / +8.04 |
 | Amazon_clothing | 1 | +CRES − sup | — | 미완료 | — | — |
 | Amazon_clothing | 1 | +CRES − +NaQ(valid 선택) | — | 미완료 | — | — |
-| Amazon_clothing | 1 | sup − VISION | — | 미완료 | — | — |
+| Amazon_clothing | 1 | sup − VISION | sup − vision | -3.10 ± 0.45 | 아니오 | -2.62 / -1.62 / -5.06 |
 | Amazon_clothing | 1 | sup − TEG-orig | — | 미완료 | — | — |
 | Amazon_clothing | 5 | +NaQ-Feat − sup | naqfeat_l1.0 − sup | +1.82 ± 0.20 | 예 | +1.68 / +1.38 / +2.40 |
 | Amazon_clothing | 5 | +NaQ-Diff − sup | naqdiff_l0.5 − sup | -0.17 ± 0.22 | 아니오 | -1.18 / +0.34 / +0.34 |
 | Amazon_clothing | 5 | +CRES − sup | — | 미완료 | — | — |
 | Amazon_clothing | 5 | +CRES − +NaQ(valid 선택) | — | 미완료 | — | — |
-| Amazon_clothing | 5 | sup − VISION | — | 미완료 | — | — |
+| Amazon_clothing | 5 | sup − VISION | sup − vision | +0.65 ± 0.27 | 예 | +1.32 / +0.38 / +0.24 |
 | Amazon_clothing | 5 | sup − TEG-orig | — | 미완료 | — | — |
 | Amazon_electronics | 1 | +NaQ-Feat − sup | naqfeat_l1.0 − sup | +5.63 ± 0.40 | 예 | +5.10 / +6.34 / +5.44 |
 | Amazon_electronics | 1 | +NaQ-Diff − sup | naqdiff_l1.0 − sup | +1.43 ± 0.39 | 예 | +2.14 / +0.42 / +1.74 |
 | Amazon_electronics | 1 | +CRES − sup | — | 미완료 | — | — |
 | Amazon_electronics | 1 | +CRES − +NaQ(valid 선택) | — | 미완료 | — | — |
-| Amazon_electronics | 1 | sup − VISION | — | 미완료 | — | — |
+| Amazon_electronics | 1 | sup − VISION | sup − vision | -3.43 ± 0.49 | 아니오 | -1.56 / -5.90 / -2.84 |
 | Amazon_electronics | 1 | sup − TEG-orig | — | 미완료 | — | — |
 | Amazon_electronics | 5 | +NaQ-Feat − sup | naqfeat_l0.5 − sup | +2.61 ± 0.23 | 예 | +2.04 / +2.70 / +3.08 |
 | Amazon_electronics | 5 | +NaQ-Diff − sup | naqdiff_l0.5 − sup | -0.57 ± 0.28 | 아니오 | -1.38 / -0.12 / -0.20 |
 | Amazon_electronics | 5 | +CRES − sup | — | 미완료 | — | — |
 | Amazon_electronics | 5 | +CRES − +NaQ(valid 선택) | — | 미완료 | — | — |
-| Amazon_electronics | 5 | sup − VISION | — | 미완료 | — | — |
+| Amazon_electronics | 5 | sup − VISION | sup − vision | +0.46 ± 0.33 | 아니오 | +2.16 / +0.08 / -0.86 |
 | Amazon_electronics | 5 | sup − TEG-orig | — | 미완료 | — | — |
 | dblp | 1 | +NaQ-Feat − sup | naqfeat_l1.0 − sup | +1.33 ± 0.31 | 예 | +1.86 / +0.72 / +1.40 |
 | dblp | 1 | +NaQ-Diff − sup | naqdiff_l1.0 − sup | +2.41 ± 0.25 | 예 | +2.66 / +1.60 / +2.96 |
 | dblp | 1 | +CRES − sup | — | 미완료 | — | — |
 | dblp | 1 | +CRES − +NaQ(valid 선택) | — | 미완료 | — | — |
-| dblp | 1 | sup − VISION | — | 미완료 | — | — |
+| dblp | 1 | sup − VISION | sup − vision | +4.13 ± 0.45 | 예 | +2.92 / +4.98 / +4.48 |
 | dblp | 1 | sup − TEG-orig | — | 미완료 | — | — |
 | dblp | 5 | +NaQ-Feat − sup | naqfeat_l0.5 − sup | +1.19 ± 0.21 | 예 | +0.78 / +1.38 / +1.42 |
 | dblp | 5 | +NaQ-Diff − sup | naqdiff_l1.0 − sup | +1.82 ± 0.21 | 예 | +1.54 / +1.72 / +2.20 |
 | dblp | 5 | +CRES − sup | — | 미완료 | — | — |
 | dblp | 5 | +CRES − +NaQ(valid 선택) | — | 미완료 | — | — |
-| dblp | 5 | sup − VISION | — | 미완료 | — | — |
+| dblp | 5 | sup − VISION | sup − vision | +3.67 ± 0.35 | 예 | +3.32 / +3.50 / +4.20 |
 | dblp | 5 | sup − TEG-orig | — | 미완료 | — | — |
