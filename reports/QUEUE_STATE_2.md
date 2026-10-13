@@ -9,7 +9,7 @@ T0: 2026-10-13T22:57:40Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 | R004 | done | 22:57 | 22:58 | — | (this) | 010 §2 그대로 |
 | 011 | done | 22:58 | 23:40 | — | (011 report) | 72/72 + allpool 18, 실패 0. 006 superseded |
 | 012 | done | 23:02 | 23:11 | — | (012 report) | 36/36, 실패 0 |
-| 013 | running | 23:00 | | — | | 구현 완료, sweep 23:33~ (lambda_selected 사용) |
+| 013 | done | 23:00 | 23:55 | — | (013 report) | 90/90, 실패 0. rho0 − rho45 6칸 모두 분명 |
 | 014 | running | 23:20 | | — | | 생성기 구현 완료. 4개가 013보다 먼저 시작됨(대기열 재정렬 전) |
 | 015 | pending | | | — | | |
 | 016 | pending | | | — | | |
@@ -19,7 +19,11 @@ T0: 2026-10-13T22:57:40Z  GPU-A: GPU-16eb803b-cabc-049e-0a5c-c5e7667128b4 (index
 2. (011) (a) 점검 해당 칸 없음(006 중복률 0 칸 없음) → 생성기 단위 점검으로 대체. 충분한지.
 3. (011) pseudo query 수 Q=5 유지(원 NaQ 학습 q_query 10).
 4. (011) allpool 이웃 표는 전체 노드·seed 무관 1회.
+5. (013) n=5라 rho30 = rho45(목표 0.4 동일). ρ 격자/n 변경 여부.
+6. (013) dblp 자연 오염률 0.71 — 곡선 범위 밖. 범위 확장 여부.
+7. (013) 치환 유사도 s_X = R003(log1p 코사인), NaQ-Feat(원시 코사인)와 다름.
+8. (013) GPU 간 비결정성: 같은 설정 18쌍 중 7쌍 최대 0.16%p 차이. 재실행 변동 평가 방식.
 
 돌고 있는 작업:
-- job_runner (results/queue2/, exit_when_idle 0): 013 90 → 014 24 (014 4개 선행)
+- job_runner (results/queue2/, exit_when_idle 0): 014 24
 - tools/cres_gen_stats.py (014 생성기 통계, GPU-B)
