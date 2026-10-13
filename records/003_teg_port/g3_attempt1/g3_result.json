@@ -1,0 +1,42 @@
+{
+ "tau": 1.0,
+ "rows": [
+  {
+   "seed": 0,
+   "tegchoi_r1": 81.46000000000001,
+   "tegchoi_r2": 81.46000000000001,
+   "port": 81.46000000000001,
+   "lo": 80.46000000000001,
+   "hi": 82.46000000000001,
+   "hash_ok": true,
+   "pass": true,
+   "port_ckpt_epoch": 7,
+   "port_test_at_best_valid": 0.8016000000000001
+  },
+  {
+   "seed": 1,
+   "tegchoi_r1": 81.16,
+   "tegchoi_r2": 81.16,
+   "port": 82.42000000000002,
+   "lo": 80.16,
+   "hi": 82.16,
+   "hash_ok": true,
+   "pass": false,
+   "port_ckpt_epoch": 6,
+   "port_test_at_best_valid": 0.852
+  },
+  {
+   "seed": 2,
+   "tegchoi_r1": 77.66000000000001,
+   "tegchoi_r2": 77.66000000000001,
+   "port": 77.66000000000003,
+   "lo": 76.66000000000001,
+   "hi": 78.66000000000001,
+   "hash_ok": true,
+   "pass": true,
+   "port_ckpt_epoch": 2,
+   "port_test_at_best_valid": 0.7944
+  }
+ ],
+ "G3": false
+}
